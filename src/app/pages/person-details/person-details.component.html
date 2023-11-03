@@ -1,0 +1,70 @@
+<div class="container-fluid px-5">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h1>Dados da pessoa desaparecida</h1>
+      <hr class="bg-primary">
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-12">
+      <i class="fa fa-arrow-left f-size-24 cursor-pointer" [routerLink]="['/pages/controle-admin']"
+        aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="row p-3 person-data-border mt-3 mx-2">
+    <div class="col">
+      <img *ngIf="!!person.urlFoto" [src]="person.urlFoto" alt="Foto de {{ person.nome }}" width="250" height="250"
+        loading="lazy">
+      <img *ngIf="!person.urlFoto" src="../../../assets/notImage.jpg" alt="Foto de {{ person.nome }}" width="250" height="250">
+    </div>
+    <div class="row col-10">
+      <div class="col-12">
+        <h1 class="text-secondary">Informações</h1>
+        <hr class="bg-primary">
+      </div>
+      <div class="col-12 col-lg-4 p-2 text-capitalize">
+        <h6 class="f-size-14 text-secondary">Nome</h6>
+        <h5 class="f-size-16">{{person.nome}}</h5>
+      </div>
+      <div class="col-12 col-lg-4 p-2">
+        <h6 class="f-size-14 text-secondary">Sexo</h6>
+        <h5 class="f-size-16">{{person.sexo}}</h5>
+      </div>
+      <div class="col-12 col-lg-4 p-2 text-capitalize">
+        <h6 class="f-size-14 text-secondary">Idade</h6>
+        <h5 class="f-size-16">{{person.idade}} anos</h5>
+      </div>
+      <div class="col-12 col-lg-4 p-2 text-capitalize">
+        <h6 class="f-size-14 text-secondary">Situação</h6>
+        <h5 class="f-size-16">{{person.vivo? "VIVO":"MORTO"}}</h5>
+      </div>
+
+      <div class="col-12 mt-3">
+        <h1 class="text-secondary">Ultima Ocorrencia</h1>
+        <hr class="bg-primary">
+      </div>
+      <div class="col-12 col-lg-4 p-2">
+        <h6 class="f-size-14 text-secondary">Data do desaparecimento</h6>
+        <h5 class="f-size-16">{{person.ultimaOcorrencia.dtDesaparecimento | date: 'dd/MM/yyyy'}}</h5>
+      </div>
+      <div class="col-12 col-lg-4 p-2">
+        <h6 class="f-size-14 text-secondary">Local do desaparecimento</h6>
+        <h5 class="f-size-16">{{person.ultimaOcorrencia.localDesaparecimentoConcat}}</h5>
+      </div>
+      <div class="col-12 col-lg-4 p-2">
+        <h6 class="f-size-14 text-secondary">Vestimentas do desaparecimento</h6>
+        <h5 class="f-size-16">{{person.ultimaOcorrencia.ocorrenciaEntrevDesapDTO?.vestimentasDesaparecido || 'Não informado'}}</h5>
+      </div>
+      <div class="col-12 px-1 mx-1">
+        <h6 class="f-size-14 text-secondary">Mais informações</h6>
+        <h5 class="f-size-16">{{person.ultimaOcorrencia.ocorrenciaEntrevDesapDTO?.informacao || 'Não informado'}}</h5>
+      </div>
+    </div>
+    <div class="d-flex justify-center align-items-center mt-2 p-2">
+      <button type="button" class="btn btn-dark btn-lg btn-block w-25" (click)="goBack()">Retornar</button>
+    </div>
+    
+  </div>
+</div>

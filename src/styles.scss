@@ -1,1 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-first: #215b85;
+  --color-second: #215b85;
+  --color-pattern: #3a596d;
+  --color-third: #bce2f8;
+  --color-fourth: #215b85;
+  --color-gray: #68717a;
+  --color-gray-second: #c4c6c7;
+  --color-white: #fff;
+  --text-link: none;
+  --link-transition: 0.5s;
+}
+
+h1{
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 36px;
+    color: var(--color-fourth);
+}
+
+table {
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 1rem;
+  vertical-align: top;
+  border-collapse: collapse;
+  caption-side: bottom;
+}
+
+table tbody {
+  color: var(--color-first);
+
+}
+
+table thead tr th {
+  color: var(--color-fourth);
+  font-weight: 600;
+}
+
+table td,
+table th {
+  border: 0 !important;
+  height: 50px;
+}
+
+table th.text-light {
+    font-size: 16px;
+}
+
+table tr {
+  border-bottom: 1px solid #dee2e6;
+  transition: background ease 0.5s;
+}
+
+table tbody tr:hover {
+  background-color: #dee2e670 !important;
+}
+
+table th {
+  font-weight: 500;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background: #fdfdfd;
+  }
+
+button:focus,
+input:focus {
+  box-shadow: 0 0 0 0 !important;
+  outline: none !important;
+}
+
+.br-table {
+  border-radius: 10px 0px 0px 0px;
+}
+
+.br-table2 {
+  border-radius: 0px 10px 0px 0px;
+}
+
+.bg-pattern {
+  background: var(--color-pattern);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn-dark{
+    background-color: #212529;
+
+    &:hover{
+        background-color: #383a3d;
+    }
+}
+
+.person-data-border {
+  border-radius: 16px;
+  border: 1px solid #e0dff3;
+  background-color: #ffffff;
+}
