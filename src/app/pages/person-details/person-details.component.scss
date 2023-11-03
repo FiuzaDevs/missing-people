@@ -1,3 +1,33 @@
 h1{
   font-size: 32px !important;
 }
+
+.btn-whatsapp{
+  background-color: #25d366;
+  border-color: #25d366;
+  color: #fff;
+  &:hover{
+    background-color: #128c7e;
+    border-color: #128c7e;
+  }
+}
+
+.btn-facebook{
+  background-color: #3b5998;
+  border-color: #3b5998;
+  color: #fff;
+  &:hover{
+    background-color: #2d4373;
+    border-color: #2d4373;
+  }
+}
+
+.btn-twitter{
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+  color: #fff;
+  &:hover{
+    background-color: #0c85d0;
+    border-color: #0c85d0;
+  }
+}
